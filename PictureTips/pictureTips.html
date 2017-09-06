@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>pictureTips</title>
+	<link rel="stylesheet" href="pictureTips.css">
+</head>
+<body>
+	<figure class="fig1">
+		<img src="images/1.jpg" alt="">
+		<figcaption>
+			<h2>杭州行</h2>
+			<p>西湖美？</p>
+			<p>西湖美！</p>
+			<p>西湖美。</p>
+		</figcaption>
+	</figure>
+
+	<figure class="fig2">
+		<img src="images/2.jpg" alt="">
+		<figcaption>
+			<h2>杭州行</h2>
+			<p>飞来飞去</p>
+			<div></div>
+		</figcaption>
+	</figure>
+
+	<figure class="fig3">
+		<img src="images/3.jpg" alt="">
+		<figcaption>
+			<h2>杭州行</h2>
+			<p>西湖美</p>
+		</figcaption>
+	</figure>
+
+	<figure class="fig4">
+		<img src="images/2.jpg" alt="">
+		<figcaption>
+			<h2>杭州行</h2>
+			<p>西湖美</p>
+			<div></div>
+		</figcaption>
+	</figure>
+</body>
+</html>
+
+
+<!-- 
+
+figure用作文档中插图的图像。HTML5语义化标签。（用于规定独立的流内容，比如图像，图表，照片，代码等等）
+figcaption定义figure元素的标题。（与figure配套使用）
+语义化标签，是没有特殊功能的，如果用div span 也都是OK的，只是对SEO更好，搜索引擎会知道它里面放的是什么，所以搜索会更快，也便于程序猿的阅读
+
+CSS3与js相比，使用简单，易于学习；性能相对优化。
+
+transform 用于图片的变形有四个元素 兼容性:ie6-8不支持
+
+transform以及transition
+transform为css3属性,主要用于元素的变形处理
+属性：translate(平移),rotate(旋转),scale(缩放),skew(斜切)
+
+translate 指定对象的2dtranslation 第一个x轴  第二个y轴 第二个参数未提供则默认0
+例如 transform：translate(10px,10px); 平移
+
+rotate 旋转 需要选有transform-origin属性的定义 （设定元素的中心点） 
+rotate(90deg)。
+当设置transform-origin 为 0 0,元素在缩放的时候会朝向0 0点方向缩放,当设置为 50% 50% 的时候,四个方向都起作用。
+正值顺时针旋转；负值逆时针旋转。
+
+scale 缩放
+transform:scale(1.3,1.3);/*缩放 无单位*/
+
+skew 斜切 transform:skew(10deg,2deg);/*斜切  单位deg*/(对应X轴,对应Y轴<为null，默认为0>)
+
+
+ transform-origin:0 0; /*旋转中心点 定义 00 左上角*/
+  transform:rotate(0deg); /*旋转*/
+   transform:translate(10px,100px;); /*平移*/
+  transform:scale(1.3,1.3);/*缩放 无单位*/ 
+  transition: transform 3s;
+
+
+  transition过度动画处理  ie6-9 不支持
+
+  property:检索或设定对象中的参与过渡的属性
+  duration 过渡动画时间
+  delay 检索或设置对象延迟过渡的时间
+  timing-function 检索或设置对象中过渡的动画类型（linear ease ease-in ease-out ease-in-out）
+
+  transform：all 2s ease-in 1s;  transform:translate(xpx,ypx)平移//all所有指定元素 2s 过渡动画时间  ease-in/ease out  慢速开始,然后变快 /慢速结束的过渡效果  1s 推迟多久才执行
+
+
+	媒体查询就是通过不同的媒体类型和条件定义样式规则。
+	媒体查询让css可以更精确作用于不同的媒体类型和同一媒体的不同条件。
+	媒体查询的大部分媒体特性都接受max和min用于表达“大于或等于”和“小于或等于”。如：width会有min-width 和max-width
+媒体查询用在针对不同的浏览器屏幕的时候使用的，有@media和@import两个，当满足条件的时候进行括号里面的css布局代码。三种导入方式。
+	@media sreen and (width:800px){ 样式 }
+	@import url(example.css) screen and (width:800px)
+	<link media="screen and (width:800px)" rel="stylesheet" href="example.css" />
+
+	两点需要注意：一个是and后边要有空格，第二是每次设定条件都要加and。
+
+ -->
