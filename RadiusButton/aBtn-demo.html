@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>a标签制作button</title>
+	<style>
+		/*a标签是行内元素，如果要定义宽高，将它改为块元素；input是行内块元素。*/
+		a{
+			display: inline-block;
+			/*width: 100px;*/
+			height: 40px;
+			text-decoration: none;
+			line-height: 40px;
+			background: url(images/btn_bg.png);
+			padding-left: 15px;
+		}
+		a span{
+			display: inline-block;
+		/*	width: 100px;*/
+			height: 40px;
+			background: url(images/btn_bg.png) right -40px;
+			padding-right: 15px;
+			color: #fff;
+		}
+		a:hover{
+			background-position: 0 -80px;
+		}
+		a:hover span{
+			background-position: right -120px;
+		}
+
+		.css3Btn{
+			display: inline-block;
+			height: 40px;
+			padding: 0 15px;
+			background: url(images/css3_btn_bg.png);
+			color: #fff;
+			border: 1px solid #3c81c4;
+			border-radius: 5px;
+			/*html5+css3可用的浏览器为ie9以上以及最新的浏览器火狐，谷歌。*/
+		}
+		.css3Btn:hover{
+			background-position: 0 -40px;
+		}
+	</style>
+</head>
+<body>
+	<!-- 1、在<a>标签中增加<span>标签 2、给按钮贴图 3、增加交互效果 -->
+	<a href="javascript:;"><span>按钮你好</span></a>
+	<!-- 
+	<a>标签制作按钮的优点：
+	1、没有默认事件；
+	2、可以用CSS模拟成按钮外观，并做到宽度自适应；
+	3、可以增加交互效果，且浏览器均兼容； 
+	4、给a标签的链接定义空操作（取消默认行为）
+	-->
+	<a class="css3Btn" href="javascript:;" onclick="alert('hi')">按钮你好</a>
+</body>
+</html>
+
+<!-- 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>InputButton</title>
+	<style>
+		input{
+			width: 100px;
+			height: 40px;
+			border: none;
+			background: url(images/btn.png);
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="按钮" />
+	<input type="submit" value="提交" />
+	<input type="reset" value="重置" />
+	<! submit和reset这两种类型有默认动作，平时不需要，目前网络上流行的按钮制作都是a标签实现哒 -->
+	<!-- img和input等虽然是内联元素，但是是行内元素，所以可以设置宽度和高度 -->
+	<!-- 如果input按钮没有设置CSS样式，表单默认样式由操作系统渲染，有交互功能。
+		如果设置了背景图片，则会失去交互功能，而且宽高必须固定死，且若宽高不适合，会repeat. -->
+	<!-- 因此，用input制作圆角按钮的局限性就是，宽度无法自适应，没有交互效果。 -->
+
