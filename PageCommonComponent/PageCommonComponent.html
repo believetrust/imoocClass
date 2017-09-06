@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3扁平化博客之文章页及常用组件</title>
+		<!-- http://www.imooc.com/learn/598 -->
+	<!--
+		网页组件重用思想 & 博客页常用组件 & 文章内容页的布局方法  
+	-->
+	<!-- markup - 写html 的过程；使用CSS和JS添加样式及功能； -->
+	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/3.0.2/normalize.css">
+	<link rel="stylesheet" href="main.css">
+
+</head>
+<body>
+	<div class="main-wrapper">
+		<!-- 页头 -->
+		<header>
+			<nav>
+				<div class="logo"><a href="#">哈喽，world</a></div>
+				<ul>				
+					<li><a href="#" class="active">首页</a></li>
+					<li><a href="article.html">文章页</a></li>
+					<li id="sidebar_trigger"><a href="">侧栏菜单</a></li>
+				</ul>
+			</nav>
+			<div id="banner">
+				<div class="inner">
+					<div class="hr"></div>
+					<h1>world</h1>
+					<div class="hr"></div>
+					<p class="sub-heading">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni aperiam, commodi esse quod consequatur voluptatibus ullam, hic ut at tenetur, quis tempora, nihil quaerat accusamus! Iusto pariatur reprehenderit, vitae porro?</p>
+					<button>了解我</button>
+					<div class="more">更多</div>
+				</div>
+			</div>
+		</header>
+
+
+		<!-- 内容 -->
+		<div class="content">
+			<section class="green-section">
+				<div class="wrapper">
+					<div>
+						<h2>一个标题</h2>
+						<div class="hr"></div>
+						<p class="sub-heading">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto similique exercitationem nihil ipsum dolor sit porro, pariatur, modi blanditiis distinctio. Maiores voluptates placeat nobis aperiam! Iste soluta perferendis a, voluptates!</p>
+					</div>
+					<div class="icon-group">
+						<span class="icon">item1</span>
+						<span class="icon">item2</span>
+						<span class="icon">item3</span>
+					</div>
+				</div>
+			</section>
+
+			<section class="grey-section">
+				<div class="article-preview clearfix">
+					<div class="text-section">
+						<h2>又一个标题</h2>
+						<div class="sub-heading">我是副标题，你好</div>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum maiores quo reprehenderit doloribus mollitia eligendi sint animi illum. Facilis rem cum voluptate corporis quasi, veritatis dolor qui architecto officia a.</p>
+					</div>
+					<div class="img-section">
+						<img src="images/1.jpg" alt="">
+					</div>
+				</div>
+				<div class="article-preview clearfix">
+					<div class="img-section">
+						<img src="images/2.jpg" alt="">
+					</div>
+					<div class="text-section">
+						<h2>又一个标题</h2>
+						<div class="sub-heading">我是副标题，你好</div>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum maiores quo reprehenderit doloribus mollitia eligendi sint animi illum. Facilis rem cum voluptate corporis quasi, veritatis dolor qui architecto officia a.</p>
+					</div>
+				</div>
+				<div class="article-preview clearfix">
+
+					<div class="text-section">
+						<h2>又一个标题</h2>
+						<div class="sub-heading">我是副标题，你好</div>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum maiores quo reprehenderit doloribus mollitia eligendi sint animi illum. Facilis rem cum voluptate corporis quasi, veritatis dolor qui architecto officia a.</p>
+					</div>
+					<div class="img-section">
+						<img src="images/3.jpg" alt="">
+					</div>
+				</div>
+			</section>
+
+			<section class="purple-section">
+				<div class="header-wrapper">
+					<h2>又一个标题</h2>
+					<div class="hr"></div>
+					<div class="sub-heading">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, explicabo maxime iure cupiditate assumenda, in labore quis quidem, possimus culpa atque delectus cumque molestiae aliquam sed voluptas tempore recusandae blanditiis!
+					</div>
+				</div>
+				<div class="card-group clearfix">
+					<div class="card">
+						<h3>标题</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora sunt, et obcaecati eos harum fugit, perspiciatis numquam dolorem officiis ullam libero distinctio velit ea provident optio molestias odit, nobis sed.</p>
+					</div>
+					<div class="card">
+						<h3>标题</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora sunt, et obcaecati eos harum fugit, perspiciatis numquam dolorem officiis ullam libero distinctio velit ea provident optio molestias odit, nobis sed.</p>
+					</div>
+					<div class="card">
+						<h3>标题</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora sunt, et obcaecati eos harum fugit, perspiciatis numquam dolorem officiis ullam libero distinctio velit ea provident optio molestias odit, nobis sed.</p>
+					</div>
+					<div class="card">
+						<h3>标题</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora sunt, et obcaecati eos harum fugit, perspiciatis numquam dolorem officiis ullam libero distinctio velit ea provident optio molestias odit, nobis sed.</p>
+					</div>
+				</div>
+			</section>
+		</div>
+
+
+		<!-- 页脚 -->
+		<footer>
+			<ul class="share-group">
+				<li>item1</li>
+				<li>item2</li>
+				<li>item3</li>
+				<li>item4</li>
+				<li>item5</li>
+			</ul>
+			<div class="copy">
+				&copy shuqing - 2017
+			</div>
+		</footer>
+
+		<!-- mask遮罩:侧栏划出时给主页面做变暗处理的遮罩样式 -->
+		<div id="mask"></div>
+		<!-- mask层 在sidebar层的下面,所有只有sidebar层会盖住mask层，因此，mask不会影响sidebar呢。 -->
+		<!-- 侧栏 -->
+		<div id="sidebar">
+			<ul>
+				<li><a href="">item1</a></li>
+				<li><a href="">item2</a></li>
+				<li><a href="">item3</a></li>
+				<li><a href="">item4</a></li>
+				<li><a href="">item5</a></li>
+				<!-- a 上 光标变为 小手手，是因为有 href 这个属性。若没有它就也只是普通的一个行内元素，文字没有下划线不能超链接等。 -->
+			</ul>
+		</div>
+
+		<!-- 返回顶部按钮 -->
+		<button class="backToTop">返回顶部</button>
+		
+	</div>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="js/main.js" ></script>
+<!-- js 放在head or footer：两种方法都可以，不过加载速度会有所区别，放在head时，需要添加window.onload或document.ready来延时加载，意思就是在整个文档未成功加载时，比如一些大的图片或其它资源获取需要一定的时间，而此时对这些资源进行的dom操作是无法生效的，必须等到加载完成后才能操作；放在body的底部时，代码由上而下执行，没有此类问题 -->
+</body>
+</html>

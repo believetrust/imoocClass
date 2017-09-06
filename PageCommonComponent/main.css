@@ -1,0 +1,411 @@
+/*
+css 样式重置 reset 它要在自己代码的前面，可以消除浏览器的差异。
+
+Normalize.css 只是一个很小的CSS文件，但它在默认的HTML元素样式上提供了跨浏览器的高度一致性。
+相比于传统的CSS reset，Normalize.css是一种现代的、为HTML5准备的优质替代方案。
+https://necolas.github.io/normalize.css/3.0.2/normalize.css
+*/
+
+/*响应式布局：博客在所有的屏幕尺寸上都可以完美显示。*/
+
+/**/
+.main-wrapper{
+	background: #444 url(images/2.jpg) no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center center;
+	overflow: hidden;
+	/*水平滚动条的隐藏是因为 overflow 与 content 的宽度不一致，因此将背景图片设置overflow为溢出隐藏即可。*/
+}
+
+header{
+	background: rgba(0,0,0,0.3);
+}
+
+nav{
+	background: transparent;
+	height: 50px;
+}
+
+#banner{
+	height: 700px;
+}
+
+.article #banner{
+	height: 350px;
+}
+
+#banner .hr{
+	background: white;
+}
+
+nav ul{
+	list-style: none;
+	margin: 0;
+	/* ul 默认是有 margin 值的。*/
+	float: right;
+
+}
+
+nav ul li,nav .logo{
+	display: inline-block;
+	/*很多li 水平排列都是float，但它使用了 inline-block会更好。*/
+	line-height: 50px;
+	/*float: right;*/
+	margin-right: 20px;
+}
+
+nav ul li a{
+	line-height: 50px;
+	text-decoration: none;
+	display: inline-block;	
+	/*display为inline-block时，设置width是没用的，只能设置高，padding等。*/
+	height: inherit;
+	/*使用inherit继承父级元素的 值*/
+	/*background: grey;*/
+	color: #fff;
+}
+
+nav .logo{
+	float: left;
+	padding: 0 10px;
+}
+
+#banner .inner{
+	/* inner 是div，是默认 继承 父元素的宽度。*/
+	max-width: 500px;
+	/*position：relative 相对于自己做偏移，没有脱离文档流*/
+	text-align: center;
+	margin: 0 auto;
+	position: relative;
+	color: white;
+	top: 160px;
+}
+
+.article #banner .inner{
+	top: 20px;
+}
+
+
+#banner .inner h1{
+	/* h1 默认是自带边距的。*/
+	margin: 0;
+	border-top: 1px solid white;
+	border-bottom: 1px solid white;
+}
+
+.article #banner .inner h1{
+	border: none;
+}
+
+button{
+	border: none;
+	background: #333;
+	color: #eee;
+	padding: 10px
+}
+
+#banner button{
+	padding: 14px 40px;
+}
+
+#banner .inner .more{
+	margin-top: 150px;
+
+}
+
+.sub-heading{
+	line-height: 30px;
+	margin: 15px;
+}
+
+.logo{
+	font-size: 20px;
+	font-weight: 700px;
+	letter-spacing: 1px;
+	/*letter-spacing:2px;调节字体间距*/
+}
+
+.logo a{
+	color: #fff;
+	text-decoration: none;
+	/*有些标签，比如颜色，只对A标签生效；所以，color放在 .logo 中是无效的。*/
+}
+
+/* 正文部分 */
+.hr{
+	width: 100%;
+	height: 2px;
+	margin: 0 auto;
+}
+
+p{
+	font-size: 18px;
+	letter-spacing: 1px;
+}
+.green-section{
+	text-align: center;
+	background: #080;
+	color: #fff;
+	padding: 100px 0;
+
+}
+
+.green-section .hr{
+	background: red;
+	width: 60%;
+}
+
+.wrapper{
+	max-width: 1080px;
+	margin: 0 auto;
+}
+
+.sub-heading{
+	font-size: 18px;
+}
+
+.green-section .icon-group .icon{
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+	background: #0d6f7c;
+	transform: rotate(45deg);
+	margin: 20px;
+}
+
+.grey-section{
+	background: grey;
+}
+
+.grey-section .img-section{
+	width: 45%;
+}
+
+.img-section img{
+	width: 100%;
+	/*如果没有width为100%，那img元素不管父元素的尺寸*/
+}
+
+.grey-section .text-section{
+	width: 55%;
+}
+
+.article-preview > div{
+	float: left;
+	font-size: 0;/*字体可能会产生块的间隙*/
+	/*右边文字， 左边图片 原理是将preview下面的div 都给个左浮动。然后要给他后面加个：after用来清除浮动 。 右边文字可以用relative定位。 
+	article-preview父类下一个div 设置浮动  父类的浮动不起作用 这里需要清除浮动*/
+}
+
+/*因为两个子元素全都浮动了，因此父元素 塌陷了，失去了内容，因此，需要给父元素清除浮动。*/
+.clearfix:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.text-section{
+	position: relative;
+	top: 68px;
+	left: 50px;
+	color: white;
+}
+
+.text-section > *{
+	width: 90%;
+	/*直系所有子元素不超过它本身的80%。*/
+}
+
+/*
+.txt-section > * {/*所有直系的子元素}
+.aticle-preview > div{/*只向下一级的所有元素div*/ 
+
+.text-section h2{
+	margin-bottom: 20px;
+}
+
+.text-section p{
+	font-size: 18px;
+	letter-spacing: 1px;
+}
+
+.text-section .sub-heading{
+	margin: 0;
+	font-size: 20px;
+}
+
+/*奇偶选择器*/
+.article-preview:nth-child(odd){
+	/*opacity: 0.1;*/
+	background: black;
+}
+/* Odd 和 even 是可用于匹配下标是奇数或偶数的子元素的关键词（第一个子元素的下标是 1）。 */
+
+/*紫色*/
+
+.purple-section{
+	background: #3F3965;
+	color: white;
+	padding:70px;
+}
+
+.purple-section .header-wrapper{
+	text-align: center;
+}
+
+.purple-section .hr{
+	background: black;
+	width: 60%;
+}
+
+.card{
+	float: left;
+	width: 50%;
+	min-height: 300px;
+	padding: 50px;
+	box-sizing: border-box;
+	/*
+	-webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+	*/
+	/*border: 1px solid green;*/
+}
+
+.card h3{
+	font-size: 24px;
+}
+
+.card:first-child{
+	background: rgba(0,0,0,0.05);
+}
+
+.card:nth-child(2){
+	background: rgba(0,0,0,0.1);
+}
+
+.card:nth-child(3){
+	background: rgba(0,0,0,0.15);
+}
+
+.card:nth-child(4){
+	background: rgba(0,0,0,0.2);
+}
+
+/*
+：first-child{
+ background：ragb（*，*,*,*）
+}
+:nth-child(*具体数字){
+ background：ragb（*，*,*,*）
+}
+*/
+
+footer{
+	background: #333;
+	color: white;
+	min-height: 200px;
+	text-align: center;
+}
+
+ul{
+	margin: 0;
+}
+
+ul.share-group{
+	display: block;
+	width: 1080px;
+	margin: 0 auto;
+	padding: 50px;
+}
+
+.share-group li{
+	display: inline-block;
+	padding: 10px;
+}
+
+.copy{
+	padding-bottom: 20px;
+}
+#mask{
+	display: none;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	/*四个方向都定义的情况下，就可以将整个页面都盖住了*/
+	background: rgba(0,0,0,0.3);
+	/* rgba的四个参数是 red green blue 以及透明度。这是CSS3的属性哦  */
+}
+
+#sidebar{
+	/*display: none;*/
+	/*display为none的时候，sidebar确实不见了，
+	但我们如果将right改为-300px，也就是将它移动width的距离恰好出屏幕之外，
+	也会看不见，但它还在。*/
+	position: fixed;
+	/*right: -300px;*/
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 300px;
+	background: #ccc;
+	padding: 20px 0;
+	transition: right 0.5s;
+	transform: translate(300px,0);
+	transition: all 0.5s;
+}
+
+#sidebar ul{
+	list-style: none;
+	/*ul 默认是有 padding  和 margin 的呢，记得取消哈。*/
+	padding: 0;
+	margin: 0;
+}
+
+#sidebar ul a{
+	width: 100%;
+	color: #fff;
+	padding: 10px 30px;
+	display: inline-block;
+	text-decoration: none;
+}
+
+#sidebar ul a:hover{
+	background: #444;
+}
+
+/*返回顶部*/
+.backToTop{
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	border: 1px solid #999;
+	background: transparent;
+}
+
+/*article文章内容*/
+.article .content{
+	background: rgba(255,255,255,0.3);
+}
+
+.content-wrapper{
+	width: 980px;
+	margin: 0 auto;
+}
+
+.articl-info{
+	font-size: 14px;
+	color: #999;
+	padding: 15px 0;
+}
+
+.content-wrapper article{
+	line-height: 2;
+	padding: 10px 0;
+}
+
+
+
