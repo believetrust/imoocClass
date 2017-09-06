@@ -1,0 +1,231 @@
+/*全局通用样式*/
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background: grey;
+}
+
+.box{
+	width: 800px;
+	height: 280px;
+	margin: 50px auto;
+	position: relative;
+	background: #ccc;
+}
+
+.box .link{
+	width: 205px;
+	height: 280px;
+	float: left;
+	margin: 0 20px;
+}
+
+/*icon要与父元素一样宽，因此将宽度设为100%。但span不具有这个能力，所以改变它的display属性。*/
+.link .icon{
+	display: inline-block;
+	width: 100%;
+	height: 190px;
+	transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+	-webkit-transition: all 0.2s ease-out;
+
+	/*transition的兼容性表格，
+		IE10、Firefox、Opera和Chrome支持；
+		Safari支持替代 -webkit-transition属性；
+		但在IE9 及其以前的版本是不支持。
+		*/
+	/*过渡 宽 是width；过渡 高 是height，如果宽高都要过渡，就 all，也可以省略不写，表示过渡所有属性。
+	 all 表示该元素上的所有属性都要过渡，比如margin等。ease-out先快后慢，哈哈。
+	*/
+}
+
+.link-miss .icon{
+	/*第一次知道，背景图片如果没有no-repeat时，竟然不能显示；除非加上它；
+		另外，还可以在背景图片的URL前面加上背景颜色，也是大开眼界了。*/
+	/*背景图片在块元素里都是靠左靠上布局，除了再设置center*/
+	/*background: #f00 url(../images/mission.png) no-repeat center center;*/
+	background: url(../images/mission.png) no-repeat center center;
+}
+
+.link-play .icon{
+	background: url(../images/play.png) no-repeat center center;
+}
+
+.link-touch .icon{
+	background: url(../images/touch.png) no-repeat center center;
+}
+
+/*三个icon的动画效果相同，放大1.2倍，及旋转360. 
+	区分 鼠标滑过link后的icon .link .icon:hover，滑过icon本身才有变化*/
+
+.link .icon:hover{
+	/*transform是综合属性，rotate和scale是附带属性 它们之间是空格隔开
+		我们还要解决浏览器兼容的问题，毕竟CSS3不是那么的通用。*/
+	/* IE10，Firefox、Opera 支持transform属性。
+		IE9支持替代的 -ms-transform 属性 ，仅适用于2D转换。
+		Safari 和 Chrome 支持替代的 -webkit-transform属性，2D和3D转换。
+		Opera只支持2D转换。
+		（如果希望这些浏览器都支持，那就把这些内核前缀都加上吧）
+	*/
+	transform: rotate(360deg) scale(1.2);
+	-ms-transform:rotate(360deg) scale(1.2);
+	-webkit-transform:rotate(360deg) scale(1.2);
+	-moz-transform:rotate(360deg) scale(1.2);
+	-o-transform:rotate(360deg) scale(1.2);
+	/*这几个前缀分别是： IE9、Safari、火狐、Opera的前缀*/
+}
+
+
+
+/*小方框的样式*/
+.button{
+	/*如果没有display为block，那宽高的设置都没有意义；
+		根据盒子模型，发现整个bottn最后呈现的是180+4+20=204px，
+		而不是我们想要的180px。如果我们只想最后呈现用180px呢？
+		除了减法得到之后，还可以在CSS3中，使用box-sizing属性啦。
+		*/
+	/*box-sizing 默认值是content-box，也就是经典的盒子模型；border-box是
+		确定最后的宽高，无关是否有padding和border。inherit 是继承。
+		它的浏览器兼容在 IE、Opera、Chrome都OK，只是在Firefox中替换是 -moz-box-sizing.*/
+	display: block;
+	width: 180px;
+	height: 50px;
+	line-height: 50px;
+	text-decoration: none;
+	color: #2DCB70;
+	font-family: Arial;
+	font-weight: bold;
+	border: 2px solid rgba(255,255,255,0.8);
+	padding-left: 20px;
+	margin: 0 auto;
+	position: relative;
+	box-sizing: border-box;
+	-ms-box-sizing:border-box;
+	background: url(../images/allow.png) no-repeat 130px center;
+	-webkit-transition: .4s ease;
+	-moz-transition: .4s ease;
+	-ms-transition: .4s ease;
+	-o-transition: .4s ease;
+	transition: .4s ease;
+	/*transition是过渡属性。有了它才有过程，否则就只有结果。
+		而且，这个定义要在滑过之前。滑过之后，只定义之后的数值。
+		ease-out是开始快后来慢的减速；ease是前后慢，中间快。*/
+	
+}
+
+.button:hover{
+	border: 2px solid rgba(255,255,255,1);
+	background-position: 140px center;
+}
+
+
+/*这四条线是针对于button发生位置变化的，因此将.button的position改为relative。*/
+.button .line{
+	display: block;
+	position: absolute;
+	background: none;
+	-webkit-transition: .4s ease;
+	-moz-transition: .4s ease;
+	-ms-transition: .4s ease;
+	-o-transition: .4s ease;
+	transition: .4s ease;
+}
+
+.button:hover .line{
+	background: #fff;
+}
+
+/*上方的线：位置从外到内，宽是从点到线100%。当width为100%，可以看到border是怎么构成的哦*/
+/*left为0 跟盒子左对齐，如果要跟边框左对齐，就要将left设为负值 */
+/*top为0 跟盒子上对齐，如果要跟边框上对齐，就要将top设为负值 */
+
+/*line-top 初始状态*/
+.button .line-top{
+	height: 2px;
+	width: 0;
+	left: -110%;
+	top: -2px;
+}
+/* line-top 最终效果 鼠标滑过的left-top ，只写有变化的属性*//*这是最终的状态，也就是鼠标滑过之后的那个状态*/
+.button:hover .line-top{
+	left: -2px;
+	width: 100%;
+}
+
+/*line-right初始状态及滑过状态*/
+.button .line-right{
+	width: 2px;
+	height: 0px;
+	right: -2px;
+	top: -110%;
+}
+.button:hover .line-right{
+	height: 100%;
+	top: -2px;
+}
+
+/*line-bottom初始状态及滑过状态*/
+.button .line-bottom{
+	height: 2px;
+	width: 0px;
+	right: -110%;
+	bottom: -2px;
+
+}
+.button:hover .line-bottom{
+	right: -2px;
+	width: 100%;
+}
+
+/*line-left初始状态及滑过状态*/
+.button .line-left{
+	width: 2px;
+	left: -2px;
+	height: 0px;
+	bottom: -110%;
+}
+.button:hover .line-left{
+	bottom: -2px;
+	height: 100%;
+}
+
+/*tip的样式，top是提示与box上方的距离*/
+.tip{
+	position: absolute;
+	padding: 0 14px;
+	height: 35px;
+	line-height: 35px;
+	background: #2DCB70;
+	color: #fff;
+	font-size: 18px;
+	margin: 0 auto;
+	border-radius: 3px;
+	top: 100px;
+	opacity: 0;
+}
+
+/*font-style为normal时，就没有了斜体啦*/
+.tip em{
+	font-style: normal;
+}
+
+/* span中定义三角形：width&height都为0，overflow为hidden，四个边都为透明，最后想要哪个显示就给它颜色。
+	居中是left为50%，再减去border的一半。 */
+.tip span{
+	display: block;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	border: 7px solid transparent;
+	border-top-color: #2DCB70;
+	/*border-top(bottom,right,left)-color:#2DCB70;（朝下，上，左，右）*/
+	position: absolute;
+	top: 35px;
+	left: 50%;
+	margin-left: -3.5px; 
+}

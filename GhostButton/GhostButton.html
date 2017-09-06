@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>幽灵按钮</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src='js/script.js'></script>
+</head>
+<body>
+	<div class="box">
+		<div class="link link-miss">
+			<!-- icon 放在span内，以背景图标出现，因span是内联元素，不具备宽高等，因此需要将它转为inline-block-->
+			<span class="icon"></span>
+			<!-- 下面的按钮具有超链接，鼠标点击是会跳转的，因此放在超链接a中 -->
+			<!-- a：hover时，有一句话出现在button的上方，这句话的内容是用js来实现；它存储在a的属性data中 -->
+			<a href="#" class="button" data="My mission is clear">
+				<span class="line line-top"></span>
+				<span class="line line-right"></span>
+				<span class="line line-bottom"></span>
+				<span class="line line-left"></span>
+				MISSION</a>
+			<!-- 鼠标滑过，按钮上有四条边在变化，因此需要四条边，来描述a：hover的效果;有些边是宽度变化，有些边是高度变化；
+				因此，我们按照顺时针方向，来定义四条边 -->
+		</div>
+
+		<div class="link link-play">
+			<!-- icon 放在span内 -->
+			<span class="icon"></span>
+			<!-- 下面的按钮具有超链接，鼠标点击是会跳转的，因此放在超链接a中 -->
+			<a href="#" class="button" data="This is my playground">
+				<span class="line line-top"></span>
+				<span class="line line-right"></span>
+				<span class="line line-bottom"></span>
+				<span class="line line-left"></span>
+				PLAY</a>
+			<!-- 鼠标滑过，按钮上有四条边在变化，因此需要四条边，来描述a：hover的效果 -->
+		</div>
+
+		<div class="link link-touch">
+			<!-- icon 放在span内 -->
+			<span class="icon"></span>
+			<!-- 下面的按钮具有超链接，鼠标点击是会跳转的，因此放在超链接a中 -->
+			<a href="#" class="button" data="Touch here please">
+				<span class="line line-top"></span>
+				<span class="line line-right"></span>
+				<span class="line line-bottom"></span>
+				<span class="line line-left"></span>
+				TOUCH</a>
+			<!-- 鼠标滑过，按钮上有四条边在变化，因此需要四条边，来描述a：hover的效果 -->
+		</div>
+
+		<!-- 自适应tip，em中放提示信息，span中放三角形，而自适应div是相对于整个box来定位的。 为什么不在每一个link的div中单独放提示信息呢？
+			因为tip是根据盒子自适应的 当文字变多的时候 tip也会变大 有可能会超过a标签所在的大小；所以以整的box来定位是最合适的；如果提示信息是固定的，而且是比link小的时候，是可以放在link中的；但如果在link中，文字很多却无法超出父元素的宽度显示出来，再加上overflow里hidden一下，就尴尬啦；-->
+		<div class="tip"><em></em><span></span></div>
+	</div>
+</body>
+</html>
+
+<!-- 
+	css3的关键技术点，
+	transform:向元素应用2D或者3D转换，比如 旋转、缩放、移动、倾斜。
+		旋转：rotate(angle)是2D旋转；如果rotateX(angle)就是沿着X轴的3D旋转啦。
+		缩放：scale(x,y)定义2D缩放转换。scale3d(x,y,z)定义3D缩放.scaleX(X)定义X轴的缩放。
+		移动：
+		倾斜：
+	transition:是一个简写属性，用于设置四个过渡属性，property谁要变化 duration动画速度 timing-function是速度曲线 delay延迟一点点再触发。border也是简写属性呢。
+	box-sizing:
+	border-radius:也是简写属性，border-left-radius。 IE9、Chrome等都支持。
+ -->
