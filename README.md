@@ -7,4 +7,5 @@
 ##### [按钮特效](http://www.imooc.com/learn/5)
 ##### [HTML5和CSS3扁平化风格博客](http://www.imooc.com/learn/445)
 ##### [CSS3扁平化博客之文章页及常用组件](http://www.imooc.com/learn/598)
+##### [CSS3图片动态提示效果](http://www.imooc.com/learn/473)
  
