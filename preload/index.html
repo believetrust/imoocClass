@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片预加载--无序加载</title>
+    <link rel="stylesheet" href="css/index.css" type="text/css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/preload.js"></script>
+</head>
+<body>
+
+    <div class="loading">
+        <p class="progress">0%</p>
+    </div>
+
+    <div class="box">
+        <img src="imgs/诗篇23-1.jpg" alt="pic" id="img" />
+        <p>
+            <a href="javascript:;" class="btn" data-control="prev">上一页</a>
+            <a href="javascript:;" class="btn" data-control="next">下一页</a>
+        </p>
+    </div>
+
+</body>
+<script>
+    var imgs = [
+        'imgs/诗篇23-1.jpg',
+        'imgs/诗篇23-2.jpeg',
+        'imgs/诗篇23-3.jpg',
+        'imgs/诗篇23-4.jpg',
+        'imgs/诗篇23-5.jpg',
+        'imgs/诗篇23-6.jpg',
+        'imgs/诗篇23-7.jpg',
+    ];
+
+    var index = 0, length = imgs.length, $progress = $('.progress');
+
+    $.preload(imgs,{
+        each:function (count) {
+            $progress.html(Math.round((count+1)/length)*100+'%');
+        },
+        all:function () {
+            $('.loading').hide();
+            document.title = '1/' +length;
+        }
+    })
+
+    $('.btn').on('click',function () {
+
+        if('prev' === $(this).data('control')  ){
+            //    上一张
+            index = Math.max(0,--index);
+        } else{
+            //    下一张
+            index = Math.min(length-1,++index);
+        }
+        document.title = (index+1)+'/'+length;
+
+        $('#img').attr('src',imgs[index]) ;
+    });
+</script>
+</html>

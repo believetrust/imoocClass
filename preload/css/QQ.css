@@ -1,0 +1,46 @@
+body,ul,li,p{
+    margin:0;
+    padding:0;
+}
+a{
+    text-decoration: none;
+    outline: none;
+}
+li{
+    list-style-type: none;
+}
+body{
+    background-color: #eeeeee;
+}
+.box{
+    margin: 150px 0 0 200px;
+}
+#face-btn{
+    display: inline-block;
+    color: #333;
+    /*text-indent:缩进*/
+}
+#face-btn:hover{
+    color: orangered;
+}
+.panel{
+    width: 390px;
+    padding:2px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    display: none;
+}
+.loading{
+    text-align: center;
+}
+.list li{
+    display: inline-block;
+    width:24px;
+    height:24px;
+    border: 1px solid #fff;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.list li:hover{
+    border-color: #0066cc;
+}

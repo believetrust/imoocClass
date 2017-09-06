@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <title>图片预加载之有序加载--漫画</title>
+    <link rel="stylesheet" href="css/cartoon.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/preload.js"></script>
+</head>
+<body>
+
+    <div class="box">
+        <img src="imgs/诗篇23-1.jpg" alt="pic" id="img" />
+        <p>
+            <a href="javascript:;" class="btn" data-control="prev">上一页</a>
+            <a href="javascript:;" class="btn" data-control="next">下一页</a>
+        </p>
+    </div>
+</body>
+<script>
+    var imgs = [
+        'imgs/诗篇23-1.jpg',
+        'imgs/诗篇23-2.jpeg',
+        'imgs/诗篇23-3.jpg',
+        'imgs/诗篇23-4.jpg',
+        'imgs/诗篇23-5.jpg',
+        'imgs/诗篇23-6.jpg',
+        'imgs/诗篇23-7.jpg',
+    ];
+
+
+
+    var len = imgs.length,count = 0,index = 0;
+//    load();
+//
+////    有序预加载:函数内部来判断
+//    function load() {
+//
+////        三步走:定义img对象;绑定事件--监听load 和 error 事件;将当前图片路径赋值给图片对象的src,开始预加载
+//        var imgObj = new Image();
+//
+//        $(imgObj).on('load error', function () {
+////            当每次图片加载完成或者出现错误时,执行该代码
+//            if (count>=len){
+////                所有图片已经加载完毕
+//            }else{
+////                还有图片没有加载完成,需要再调用自己。
+//                load();
+//            }
+//            count ++;
+//        });
+////        console.log(imgs[count]);
+//        imgObj.src = imgs[count];
+//    }
+
+    $.preload(imgs,{
+        order:'ordered',
+    });
+
+
+    $('.btn').on('click',function () {
+
+        if('prev' === $(this).data('control')  ){
+            //    上一张
+            index = Math.max(0,--index);
+        } else{
+            //    下一张
+            index = Math.min(len-1,++index);
+        }
+
+        document.title = (index+1)+'/'+len;
+        $('#img').attr('src',imgs[index]) ;
+    });
+</script>
+</html>
