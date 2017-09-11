@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>全屏切换效果</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		html,body{
+			height: 100%;
+			/*overflow: hidden;*/
+			/*如果加上overflow，那就不能滑动啦。*/
+		}
+		#container,.sections,.section{
+			height: 100%;
+		}
+		/*使背景图片始终位于屏幕的中心。*/
+		#section0,
+		#section1,
+		#section2,
+		#section3{
+			background-color: #000;
+			background-size: cover;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-position: 50% 50%;
+			text-align: center;
+			color: white;
+		}
+		#section0{
+			background-image: url(images/1.jpg); 
+		}
+		#section1{
+			background-image: url(images/2.jpg); 
+		}
+		#section2{
+			background-image: url(images/3.jpg); 
+		}
+		#section3{
+			background-image: url(images/1.jpg); 
+		}
+		/*全屏的重点是：
+			全屏要素：
+		1.全屏的元素及其父元素都要设置height：100%
+		2.将HTML、body标签设置height:100%;
+		(注意：height:100%是跟随其父元素亮度变化而变化的)
+*/
+		.left{
+			float: left;
+			width: 25%;
+		}
+	</style>
+</head>
+<body>
+	<div id="container" style="width: 400%">
+		<div class="sections">
+			<div class="section left" id="section0">
+				<h3>this is the page</h3>
+			</div>
+			<div class="section left" id="section1">
+				<h3>this is the page</h3>
+			</div>
+			<div class="section left" id="section2">
+				<h3>this is the page</h3>
+			</div>
+			<div class="section left" id="section3">
+				<h3>this is the page</h3>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
