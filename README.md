@@ -17,4 +17,6 @@
 - [DatePicker组件开发](http://www.imooc.com/learn/820)      
 --简书记录着这节课的学习笔记与一点心得体会[日期组件的开发](http://www.jianshu.com/p/796f8aac244d)
 
+- [全屏切换效果](https://www.imooc.com/learn/374)
+
  
