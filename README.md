@@ -4,7 +4,7 @@
 按着课程里老师的讲解，一点点跟下来，还是有许多的成长。
 #### 那些年，我跟随老师敲过的代码
 - [图片预加载](http://www.imooc.com/learn/502) 
-简书则记录了码代码过程中的小细节[图片预加载-有序加载](http://www.jianshu.com/p/fe4831c4c876)  [图片预加载-QQ无序加载](http://www.jianshu.com/p/ac349e1a5d38)   [图片预加载-网站loading页无序加载](http://www.jianshu.com/p/cdd9d2397b30)
+--简书则记录了码代码过程中的小细节: [图片预加载-有序加载](http://www.jianshu.com/p/fe4831c4c876)  [图片预加载-QQ无序加载](http://www.jianshu.com/p/ac349e1a5d38)   [图片预加载-网站loading页无序加载](http://www.jianshu.com/p/cdd9d2397b30)
 
 - [按钮特效](http://www.imooc.com/learn/5)
 
@@ -13,5 +13,8 @@
 - [CSS3扁平化博客之文章页及常用组件](http://www.imooc.com/learn/598)
 
 - [CSS3图片动态提示效果](http://www.imooc.com/learn/473)
+
+- [DatePicker组件开发](http://www.imooc.com/learn/820)      
+--简书记录着这节课的学习笔记与一点心得体会[日期组件的开发](http://www.jianshu.com/p/796f8aac244d)
 
  
