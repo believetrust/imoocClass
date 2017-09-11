@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>DatePicker</title>
+    <link rel="stylesheet" href="datepicker.css">
+    <script src="datepicker.js"></script>
+    <script src="main.js"></script>
+    <style>
+        .datepicker{
+            /*因输入框不是组件内容,就将其样式写入页面了*/
+            border:1px solid #ccc;
+            border-radius: 4px;
+            padding: 5px;
+            height:24px;
+            line-height:24px;
+            width: 230px;
+        }
+        .datepicker:focus{
+            border: 1px solid #1abc9c;
+            outline: 0;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" class="datepicker">
+    <!--准备好容器,才能调用方法吗?当然不能如此呢-->
+    <!--<div class="ui-datepicker-wrapper">-->
+        <!--<div class="ui-datepicker-header">-->
+            <!--<a href="#" class="ui-datepicker-btn ui-datepicker-prev-btn" >&lt;</a>-->
+            <!--<a href="#" class="ui-datepicker-btn ui-datepicker-next-btn">&gt;</a>-->
+            <!--<span class="ui-datepicker-curr-month">2017-09</span>-->
+        <!--</div>-->
+        <!--<div class="ui-datepicker-body">-->
+            <!--<table>-->
+               <!--<thead>-->
+                   <!--<tr>-->
+                       <!--<th>一</th>-->
+                       <!--<th>二</th>-->
+                       <!--<th>三</th>-->
+                       <!--<th>四</th>-->
+                       <!--<th>五</th>-->
+                       <!--<th>六</th>-->
+                       <!--<th>日</th>-->
+                   <!--</tr>-->
+               <!--</thead>-->
+                <!--<tbody>-->
+                    <!--<tr>-->
+                        <!--<td>1</td>-->
+                        <!--<td>2</td>-->
+                        <!--<td>3</td>-->
+                        <!--<td>4</td>-->
+                        <!--<td>5</td>-->
+                        <!--<td>6</td>-->
+                        <!--<td>7</td>-->
+                    <!--</tr>-->
+                <!--</tbody>-->
+            <!--</table>-->
+        <!--</div>-->
+    <!--</div>-->
+    <script>
+        <!--应该这样可以将输入框变成日期组件了哦-->
+        datepicker.init('.datepicker');
+//        datepicker.init(document.querySelector('.ui-datepicker-wrapper'));
+//       var monthDate =  datepicker.getMonthDate(2016,12);
+//        console.log('---------',monthDate);
+    </script>
+</body>
+</html>
