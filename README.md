@@ -19,6 +19,6 @@
 
 - [全屏切换效果](https://www.imooc.com/learn/374)
 
--[CSS3实现网页平滑过渡](http://www.imooc.com/learn/252)不用任何 JavaScript 脚本，使用纯 CSS 实现页面之间的平滑过渡，体验 transform、transition、animation 带来的神奇体验。
+- [CSS3实现网页平滑过渡](http://www.imooc.com/learn/252)不用任何 JavaScript 脚本，使用纯 CSS 实现页面之间的平滑过渡，体验 transform、transition、animation 带来的神奇体验。
 
  
